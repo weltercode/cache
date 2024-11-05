@@ -7,6 +7,7 @@ import (
 
 type Cache struct {
 	items map[string]any
+	s     string
 }
 
 func (c Cache) New() Cache {
