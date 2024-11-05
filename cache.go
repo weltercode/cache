@@ -7,10 +7,9 @@ import (
 
 type Cache struct {
 	items map[string]any
-	s     string
 }
 
-func (c Cache) New() Cache {
+func New() Cache {
 	return Cache{
 		items: make(map[string]any),
 	}
