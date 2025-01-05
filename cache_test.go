@@ -9,8 +9,8 @@ func TestNew(t *testing.T) {
 	c := New()
 
 	// Check if the returned type is `Cache`
-	if _, ok := interface{}(c).(Cache); !ok {
-		t.Errorf("Result was incorrect, got type %T, want type Cache", c)
+	if _, ok := interface{}(c).(*Cache); !ok {
+		t.Errorf("Result was incorrect, got type %T, want type Cache", *c)
 	}
 
 	// Ensure the items map is initialized
@@ -19,7 +19,7 @@ func TestNew(t *testing.T) {
 	}
 }
 
-func TestSet(t *testing.T) {
+func TestSetAndGet(t *testing.T) {
 	c := New()
 
 	key := "test_key_zz"
